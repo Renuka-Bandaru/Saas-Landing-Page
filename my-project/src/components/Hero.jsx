@@ -3,9 +3,9 @@ import heroImage from "../assets/images/hero.png";
 const Hero = () => {
   return (
     <section className="min-h-screen flex items-center justify-center px-4 sm:px-6 bg-gradient-to-br from-blue-100 to-white">
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center w-full">
+      <div className="max-w-6xl mx-auto flex flex-col-reverse md:flex-row items-center gap-10 md:gap-12 w-full">
         {/* Text Content */}
-        <div className="relative z-10 w-full">
+        <div className="relative z-10 w-full md:w-1/2 flex justify-center md:justify-start">
           <div
             className="
               backdrop-blur-lg 
@@ -17,6 +17,8 @@ const Hero = () => {
               text-center md:text-left 
               space-y-5 md:space-y-6
               transition-all
+              w-full
+              max-w-xl
             "
             style={{
               boxShadow: "0 8px 32px 0 rgba(31, 38, 135, 0.18)",
@@ -35,18 +37,13 @@ const Hero = () => {
           </div>
         </div>
         {/* Image Content */}
-        <div className="relative z-0 flex justify-center w-full">
-          <div className="backdrop-blur-lg bg-white/30 rounded-2xl md:rounded-3xl shadow-lg p-2 sm:p-4 w-full flex justify-center">
+        <div className="relative z-0 flex justify-center w-full md:w-1/2 mb-8 md:mb-0">
+          <div className="backdrop-blur-lg bg-white/30 rounded-2xl md:rounded-3xl shadow-lg p-2 sm:p-4 w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg flex justify-center">
             <img
               src={heroImage}
               alt="AI Marketing Illustration"
               className="
                 w-full 
-                max-w-xs 
-                sm:max-w-sm 
-                md:max-w-md 
-                lg:max-w-lg 
-                mx-auto
                 h-auto
                 object-contain
                 transition-all
