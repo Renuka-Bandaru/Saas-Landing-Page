@@ -51,21 +51,39 @@ const Features = () => {
   return (
     <Box
       sx={{
-        padding: '4rem 2rem',
+        px: { xs: 1, sm: 2, md: 4 },
+        py: { xs: 4, sm: 6, md: 8 },
         background: 'linear-gradient(135deg, #e0e7ff 0%, #f9fafb 100%)',
-        minHeight: '100vh',
+        minHeight: { xs: 'unset', md: '100vh' },
+        width: '100%',
       }}
     >
-      <Typography variant="h4" align="center" gutterBottom fontWeight={600}>
+      <Typography
+        variant="h4"
+        align="center"
+        gutterBottom
+        fontWeight={600}
+        sx={{
+          fontSize: { xs: '2rem', sm: '2.5rem', md: '2.75rem' },
+        }}
+      >
         Powerful Features to Supercharge Your Marketing
       </Typography>
-      <Typography variant="subtitle1" align="center" color="text.secondary" mb={5}>
+      <Typography
+        variant="subtitle1"
+        align="center"
+        color="text.secondary"
+        mb={{ xs: 3, sm: 4, md: 5 }}
+        sx={{
+          fontSize: { xs: '1rem', sm: '1.15rem', md: '1.25rem' },
+        }}
+      >
         Everything you need to scale and automate your marketing.
       </Typography>
 
       <Grid
         container
-        spacing={4}
+        spacing={{ xs: 2, sm: 3, md: 4 }}
         justifyContent="center"
         alignItems="stretch"
       >
@@ -79,6 +97,8 @@ const Features = () => {
             sx={{
               display: 'flex',
               flexDirection: 'column',
+              // Ensure full height for flex children
+              height: '100%',
             }}
           >
             <motion.div
@@ -92,9 +112,9 @@ const Features = () => {
               <Paper
                 elevation={0}
                 sx={{
-                  padding: 3,
+                  p: { xs: 2, sm: 3 },
                   textAlign: 'center',
-                  borderRadius: '20px',
+                  borderRadius: { xs: '16px', sm: '20px' },
                   display: 'flex',
                   flexDirection: 'column',
                   height: '100%',
@@ -109,13 +129,37 @@ const Features = () => {
                     boxShadow: '0 12px 40px 0 rgba(31, 38, 135, 0.25)',
                     background: 'rgba(255,255,255,0.35)',
                   },
+                  minHeight: { xs: 180, sm: 220, md: 240 },
                 }}
               >
-                {feature.icon}
-                <Typography variant="h6" fontWeight={600} mt={2}>
+                <Box
+                  sx={{
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    mb: { xs: 1, sm: 2 },
+                  }}
+                >
+                  {feature.icon}
+                </Box>
+                <Typography
+                  variant="h6"
+                  fontWeight={600}
+                  mt={{ xs: 1, sm: 2 }}
+                  sx={{
+                    fontSize: { xs: '1.1rem', sm: '1.25rem', md: '1.35rem' },
+                  }}
+                >
                   {feature.title}
                 </Typography>
-                <Typography variant="body2" color="text.secondary" mt={1}>
+                <Typography
+                  variant="body2"
+                  color="text.secondary"
+                  mt={1}
+                  sx={{
+                    fontSize: { xs: '0.95rem', sm: '1rem' },
+                  }}
+                >
                   {feature.description}
                 </Typography>
               </Paper>
